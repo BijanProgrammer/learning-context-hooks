@@ -8,6 +8,7 @@ import ThemeContextProvider from './contexts/ThemeContext';
 import AuthContextProvider from './contexts/AuthContext';
 import BookContextProvider from './contexts/BookContext';
 import PageExpander from './components/PageExpander';
+import AddBookForm from './components/AddBookForm';
 
 function App() {
 	return (
@@ -16,9 +17,10 @@ function App() {
 				<AuthContextProvider>
 					<BookContextProvider>
 						<PageExpander>
+							<ThemeToggle />
 							<Navbar />
 							<BookList />
-							<ThemeToggle />
+							<AddBookForm />
 						</PageExpander>
 					</BookContextProvider>
 				</AuthContextProvider>
