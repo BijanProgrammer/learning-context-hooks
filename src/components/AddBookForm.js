@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { BookContext } from '../contexts/BookContext';
 
+import { ADD_BOOK } from '../actions/actionTypes';
+
 const AddBookForm = () => {
 	const { isLightTheme, light, dark } = useContext(ThemeContext);
 	const theme = isLightTheme ? light : dark;
 
-	const { addBook } = useContext(BookContext);
+	const { dispatch } = useContext(BookContext);
 
 	const [ title, setTitle ] = useState('');
 	const [ author, setAuthor ] = useState('');
@@ -14,7 +16,7 @@ const AddBookForm = () => {
 	const clickedOnSubmitButton = (e) => {
 		e.preventDefault();
 
-		addBook(title, author);
+		dispatch({ type: ADD_BOOK, book: { title, author } });
 
 		setTitle('');
 		setAuthor('');
