@@ -6,14 +6,16 @@ class ThemeContextProvider extends Component {
 	state = {
 		isLightTheme : true,
 		light        : {
-			bg  : '#fde3a7',
-			txt : '#424242',
-			btn : '#fabe58'
+			bg   : '#fde3a7',
+			txt  : '#505050',
+			btn  : '#fabe58',
+			fade : '#707070'
 		},
 		dark         : {
-			bg  : '#424242',
-			txt : '#fde3a7',
-			btn : '#232323'
+			bg   : '#505050',
+			txt  : '#fde3a7',
+			btn  : '#232323',
+			fade : '#707070'
 		}
 	};
 

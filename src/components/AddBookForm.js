@@ -13,7 +13,21 @@ const AddBookForm = () => {
 
 	const clickedOnSubmitButton = (e) => {
 		e.preventDefault();
+
 		addBook(title, author);
+
+		setTitle('');
+		setAuthor('');
+	};
+
+	const inputStyle = {
+		backgroundColor : theme.bg,
+		color           : theme.txt
+	};
+
+	const submitStyle = {
+		backgroundColor : theme.txt,
+		color           : theme.bg
 	};
 
 	return (
@@ -23,19 +37,23 @@ const AddBookForm = () => {
 			style={{ background: theme.btn }}>
 			<input
 				type='text'
-				title='title'
-				placeholder='Title ...'
+				name='title'
+				placeholder='Title'
+				value={title}
 				onChange={(e) => setTitle(e.target.value)}
 				required
+				style={inputStyle}
 			/>
 			<input
 				type='text'
-				title='author'
-				placeholder='Author ...'
+				name='author'
+				placeholder='Author'
+				value={author}
 				onChange={(e) => setAuthor(e.target.value)}
 				required
+				style={inputStyle}
 			/>
-			<input type='submit' value='Add Book' />
+			<input type='submit' value='Add Book' style={submitStyle} />
 		</form>
 	);
 };
